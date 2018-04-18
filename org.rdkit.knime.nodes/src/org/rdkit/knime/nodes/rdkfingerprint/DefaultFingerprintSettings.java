@@ -570,6 +570,12 @@ public class DefaultFingerprintSettings extends DataCell implements FingerprintS
 			}
 			sb.append("Radius: ").append(getRadius());
 		}
+		if (getUseChirality()) {
+			if (sb.length() > 0) {
+				sb.append("\n");
+			}
+			sb.append("Use Chirality: ").append(getUseChirality());
+		}
 		if (isAvailable(getLayerFlags())) {
 			if (sb.length() > 0) {
 				sb.append("\n");
@@ -581,9 +587,6 @@ public class DefaultFingerprintSettings extends DataCell implements FingerprintS
 				sb.append("\n");
 			}
 			sb.append("Similarity Bits: ").append(getSimilarityBits());
-		}
-		if (getUseChirality()) {
-			sb.append("Use Chirality: true");
 		}
 		if (isRooted()) {
 			if (sb.length() > 0) {

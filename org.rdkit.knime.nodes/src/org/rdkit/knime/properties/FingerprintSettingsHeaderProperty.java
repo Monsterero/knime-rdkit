@@ -274,6 +274,7 @@ public class FingerprintSettingsHeaderProperty extends DefaultFingerprintSetting
 			setAtomPairMaxPath(getInt(mapProps, PROPERTY_FP_ATOMPAIR_MAX_PATH, strColumnName));
 			setNumBits(getInt(mapProps, PROPERTY_FP_NUM_BITS, strColumnName));
 			setRadius(getInt(mapProps, PROPERTY_FP_RADIUS, strColumnName));
+			setUseChirality(getBoolean(mapProps, PROPERTY_FP_USE_CHIRALITY, strColumnName));
 			setLayerFlags(getInt(mapProps, PROPERTY_FP_LAYER_FLAGS, strColumnName));
 			setSimilarityBits(getInt(mapProps, PROPERTY_FP_SIMILARITY_BITS, strColumnName));
 			setRooted(getBoolean(mapProps, PROPERTY_FP_IS_ROOTED, strColumnName));
@@ -319,6 +320,10 @@ public class FingerprintSettingsHeaderProperty extends DefaultFingerprintSetting
 			if (getRadius() != UNAVAILABLE) {
 				listProps.add(PROPERTY_FP_RADIUS);
 				listProps.add("" + getRadius());
+			}
+			if (getUseChirality()) {
+				listProps.add(PROPERTY_FP_USE_CHIRALITY);
+				listProps.add("" + getUseChirality());
 			}
 			if (getLayerFlags() != UNAVAILABLE) {
 				listProps.add(PROPERTY_FP_LAYER_FLAGS);
